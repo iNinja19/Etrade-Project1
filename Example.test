@@ -1,0 +1,19 @@
+//This is an example i got from this github: jessecooper/pyetrade
+
+//Not sure, this shit is very boring....just kidding i love this ish....
+//Sorry for the bad language....the reason i am copying and pasting this example is
+//so i remember where i got this info, when i get back to this....Peace out!!!!
+
+// Example Usage
+import pyetrade
+oauth = pyetrade.ETradeOAuth(consumer_key, consumer_secret)
+oauth.get_request_token()
+#Follow url and get verification code
+tokens = oauth.get_access_token(verifier_code)
+accounts = pyetrade.ETradeAccounts(
+        consumer_key,
+        consumer_secret, 
+        tokens['oauth_token'],
+        tokens['oauth_token_secret']
+    )
+accounts.list_accounts()
